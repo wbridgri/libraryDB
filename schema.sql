@@ -2,26 +2,26 @@ drop database if exists libraryDB;
 create database libraryDB;
 use libraryDB;
 
-create table(
-1	Blackouts
-2	The Floating World
-3	Little Thieves
-4	Pride or Die
-5	Dead Wednesday
-6	Dead Things are Closer Than They Aooear
-7	The Co-op
-8	Starter Villain
-9	Harriet Tubman: Live in Concert
-10	The Party
-11	Mr. Mercedes
-12	Blood of Elves
-13	The Art of Fear
-14	Behind Her Eyes
-15	The Cirruotion of Hollis Brown
-16	Desert Echoes
-17	The Prison Healer
-18	The Witch's Heart
-19	The Tale of Genji
-20	The Last Wish
-	
+create table author(
+    author_id TINYINT unsigned AUTO_INCREMENT NOT NULL,
+    author varchar(40),
+    constraint pk_author primary key (author_id)
+);
+
+create table publisher(
+    pub_id tinyint unsigned AUTO_INCREMENT no Null,
+    publisher varchar(40),
+    constraint pk_publisher primary key (pub_id)
+);
+
+create table genre(
+    genre_id tinyint unsigned AUTO_INCREMENT NOT NULL,
+    genre varchar(40),
+    constraint pk_genre primary key (genre_id)
 )
+
+create table format(
+    format_id unsigned AUTO_INCREMENT NOT NULL,
+    format varchar(15),
+    contraint pk_format primary key (format_id)
+);
