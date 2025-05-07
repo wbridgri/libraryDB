@@ -5,13 +5,11 @@ use libraryDB;
 create table author(
     author_id TINYINT unsigned AUTO_INCREMENT NOT NULL,
     author varchar(40),
-    first_name varchar(20),
-    last_name varchar(20)
     constraint pk_author primary key (author_id)
 );
 
 create table publisher(
-    pub_id tinyint unsigned AUTO_INCREMENT no Null,
+    pub_id tinyint unsigned AUTO_INCREMENT NOT Null,
     publisher varchar(40),
     constraint pk_publisher primary key (pub_id)
 );
@@ -31,12 +29,26 @@ create table format(
 create table book(
     book_id tinyint unsigned AUTO_INCREMENT not null,
     title varchar(60),
-    author_id tinyint unsigned AUTO_INCREMENT not null,
-    pub_id tinyint unsigned AUTO_INCREMENT not null,
+    author_id tinyint unsigned  not null, 
+    pub_id tinyint unsigned not null,
     copyright_year YEAR,
     edition tinyint unsigned NOT NULL,
-    edition_year YEAR
+    edition_year YEAR,
+    binding enum('paperback', 'hardback'),
+    rating enum('1', '2', '3', '4', '5'),
+    language varchar(4),
+    qty tinyint unsigned NOT NULL,
+    num_pages smallint unsigned NOT NULL,
+    cover_image varchar(40),
+    constraint pk_book primary key (book_id),
+    constraint  fk_author foreign key (author_id) references author (author_id),
+    constraint fk_pub foreign key (pub_id) references publisher (pub_id)
+);
 
-
-)
+create table book_to_genre(
+    book_id tinyint unsigned not null,
+    genre_id tinyint unsigned not null,
+    constraint fk_book_btg foreign key (book_id) references book (book_id),
+    constraint fk_genre_btg foreign key (genre_id) references genre (genre_id)
+);
 
