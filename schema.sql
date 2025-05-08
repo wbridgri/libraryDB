@@ -73,6 +73,11 @@ ALTER TABLE book ADD CONSTRAINT fk_format FOREIGN KEY (format_id) REFERENCES for
 
 DELETE FROM book WHERE book_id = 1;
 
+DELETE FROM book WHERE book_id <> 1; --AHA!!!!!!
+
+
+
+
     SET @num :=0;
     UPDATE book SET book_id= @num := (@num + 1);
     ALTER TABLE book AUTO_INCREMENT = 1;
