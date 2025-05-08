@@ -22,7 +22,7 @@ insert into author(author)
 ('Murasaki Shikibu');
 
 insert into publisher(publisher)
-     ('Picador');
+    ('Picador');
 
 insert into publisher(publisher)
     values('Feiwel & Friends'), 
@@ -43,3 +43,40 @@ insert into publisher(publisher)
     ('Ace'),
     ('Penguin'),
     ('Orbit');
+
+insert into genre(genre)
+    values('Literary'),
+    ('LGBTQ'),
+    ('Fantasy'),
+    ('Young Adult'),
+    ('Science Fiction'),
+    ('Speculative Fiction'),
+    ('Mystery'),
+    ('Magic Realism'),
+    ('Horror'),
+    ('Romance'),
+    ('Humor'),
+    ('African American'),
+    ('Historical');
+
+insert into format(format)
+    values('PHYSICAL'),
+    ('AUDIOBOOK'),
+    ('E-BOOK');
+
+insert into book(
+    title,
+    author_id, 
+    pub_id,
+    copyright_year,
+    edition,
+    edition_year,
+    binding,
+    rating,
+    language,
+    num_pages,
+    cover_image,
+    qty,
+    format_id
+)
+    values('Blackouts', 1, 1, 2023, 1, 2023, 'hardback', '4', 'en', 320, 'blackouts.jpg', 54, 1);
