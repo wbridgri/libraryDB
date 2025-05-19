@@ -179,3 +179,7 @@ INSERT INTO book_to_genre (book_id, genre_id) VALUES
 
 
 --TESTING SOME QUERIES
+select book.title, book_to_genre.genre_id from book inner join book_to_genre on book.book_id = book_to_genre.book_id;
+
+
+--relational algebra
